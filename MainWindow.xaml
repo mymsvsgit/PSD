@@ -1,0 +1,71 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewMonSchedule" Height="400" Width="700">
+    <Grid HorizontalAlignment="Left" Height="324.245" Margin="10,10,0,0" VerticalAlignment="Top" Width="664.219">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="226*"/>
+            <ColumnDefinition Width="259*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="250*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Name="groupBox" Grid.Column="2" Header="Данные для отправки отчета" Grid.Row="1">
+            <Grid Margin="10,10,-2,-2.02">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="36.5*"/>
+                    <RowDefinition Height="36.5*"/>
+                    <RowDefinition Height="36.5*"/>
+                    <RowDefinition Height="36.5*"/>
+                    <RowDefinition Height="36.5*"/>
+                    <RowDefinition Height="36.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="41*"/>
+                    <ColumnDefinition Width="138*"/>
+                </Grid.ColumnDefinitions>
+                <Label Name="label6" Content="От:" HorizontalAlignment="Left" Margin="-0.001,0,0,-0.001" VerticalAlignment="Center" Height="26" Width="47.994"/>
+                <Label Name="label" Content="Кому:" Margin="0,1.282,0,9.299" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="43.127" Grid.Row="1"/>
+                <Label Name="label1" Content="SMTP" Margin="0,9.547,0,9.544" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="40.157"/>
+                <Label Name="label2" Content="User" Margin="0,8.503,0,7.585" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="33.787"/>
+                <Label Name="label3" Content="Passw" Margin="0,0.055,0,11.027" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="41.687"/>
+                <TextBox Name="tBmailFrom" Grid.Column="1" Margin="8,2,0,0" TextWrapping="Wrap" Text="user@domain.ru" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="166" Height="25"/>
+                <TextBox Name="tBmailTo" Grid.Column="1" Margin="8,2,0,0" TextWrapping="Wrap" Text="user@domain.ru" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="166" Height="25"/>
+                <TextBox Name="tBmailsmtp" Grid.Column="1" Margin="8,2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="mail.domain.ru" HorizontalAlignment="Left" VerticalAlignment="Center" Width="166" Height="25"/>
+                <TextBox Name="tBmailUserName" Grid.Column="1" Margin="8,2,0,0" Grid.Row="3" TextWrapping="Wrap" Text="domain\username" HorizontalAlignment="Left" VerticalAlignment="Center" Width="166" Height="25"/>
+                <PasswordBox Name="pBmailPasswd" Grid.Column="1" Margin="8,2,0,0" Grid.Row="4" Password="Password" HorizontalAlignment="Left" VerticalAlignment="Center" Width="167" Height="25"/>
+                <CheckBox Name="checkBox" Content="Требуется SSL" Grid.Column="1" Margin="10,10,0,0" Grid.Row="5"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Name="groupBox1" Grid.Column="1" Header="Добавить мониторинг:" Grid.Row="1"/>
+        <Grid Grid.Column="1" HorizontalAlignment="Left" Height="179.151" Margin="10,10,-2,-2.02" Grid.Row="1" VerticalAlignment="Top" Width="206.075">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="49*"/>
+            </Grid.RowDefinitions>
+            <Label Name="label4" Content="*Используются данные из AD DS" HorizontalAlignment="Left" Margin="10,4.065,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <CheckBox Name="chBoxExchange" Content="MS Exchange" HorizontalAlignment="Left" Margin="26.628,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <CheckBox Name="chBoxADDS" Content="Active Directory" HorizontalAlignment="Left" Margin="26.628,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+            <CheckBox Name="chBoxHV" Content="Hyper-V Server" HorizontalAlignment="Left" Margin="26.628,10,0,0" Grid.Row="4" VerticalAlignment="Top"/>
+        </Grid>
+        <Button Name="btnCreateSch" Content="Создать задание" Grid.Column="2" HorizontalAlignment="Left" Margin="125.941,13.073,0,0" Grid.Row="2" VerticalAlignment="Top" Width="114.193" Height="19.96"/>
+        <Grid HorizontalAlignment="Left" Height="199.151" Grid.Row="1" VerticalAlignment="Top" Width="179.059">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="55*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="88*"/>
+            </Grid.RowDefinitions>
+            <Label Name="label5" Content="Укажите OU серверов:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26.02" Width="179.059"/>
+            <TextBox Name="tBServerOU" HorizontalAlignment="Left" Height="23" Grid.Row="2" TextWrapping="Wrap" Text="OU=Server,DC=domain,DC=ru" VerticalAlignment="Top" Width="179.059"/>
+        </Grid>
+        <TextBlock Name="textBlock" HorizontalAlignment="Left" Margin="0,24.945,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="49.684" Width="174.059"><Run Text="*Путь указывается в формате:"/><LineBreak/><Run Text="&quot;"/><Run Text="OU=Server,DC=domain,DC=ru"/><Run Text="&quot;"/></TextBlock>
+    </Grid>
+</Window>
